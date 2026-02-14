@@ -1,0 +1,533 @@
+/* Стиль Rain World - постапокалипсис, дождь, ржавчина */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0a0c0a;
+    color: #c0d0c0;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Фон с FP_RedThing */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/images/FP_RedThing.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -2;
+}
+
+/* Эффект дождя */
+body::after {
+    content: '';
+    position: fixed;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 200px);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 3px,
+        rgba(114, 159, 207, 0.1) 3px,
+        rgba(114, 159, 207, 0.1) 6px
+    );
+    pointer-events: none;
+    animation: rain 8s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rain {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка с Sky Islands */
+.header {
+    background-image: url('/static/images/sky_islands.png');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    border: 4px solid #5a7e5a;
+    margin-bottom: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(90, 126, 90, 0.3);
+}
+
+.header h1 {
+    font-size: 48px;
+    color: #e0f0e0;
+    text-shadow: 
+        4px 4px 0 #2a3a2a,
+        0 0 20px #7c9a7c;
+    background: rgba(10, 20, 10, 0.7);
+    padding: 15px 40px;
+    border: 3px solid #7c9a7c;
+    letter-spacing: 6px;
+    font-weight: bold;
+    backdrop-filter: blur(2px);
+}
+
+.header h1 span {
+    font-size: 18px;
+    display: block;
+    letter-spacing: 3px;
+    color: #b0d0b0;
+}
+
+/* Навигация */
+.nav {
+    background: rgba(10, 20, 10, 0.9);
+    border: 2px solid #5a7e5a;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: #b0d0b0;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid #5a7e5a;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    background: #5a7e5a;
+    color: #0a0c0a;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(90, 126, 90, 0.5);
+}
+
+.nav a.active {
+    background: #5a7e5a;
+    color: #0a0c0a;
+    border-color: #8aca8a;
+}
+
+/* Карточки с контентом */
+.content-card {
+    background: rgba(10, 20, 10, 0.9);
+    border: 2px solid #5a7e5a;
+    padding: 30px;
+    margin: 30px 0;
+    backdrop-filter: blur(2px);
+    box-shadow: 5px 5px 0 #2a3a2a;
+}
+
+.content-card h2 {
+    color: #d0e8d0;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-left: 4px solid #8aca8a;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content-card h2::before {
+    content: '▶';
+    color: #8aca8a;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.content-card h3 {
+    color: #d0e8d0;
+    font-size: 20px;
+    margin: 20px 0 10px;
+    border-left: 3px solid #8aca8a;
+    padding-left: 10px;
+}
+
+/* Блоки с кодом */
+.code-block {
+    background: #0a100a;
+    border: 2px solid #3a5a3a;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    color: #b0d0b0;
+    margin: 20px 0;
+    position: relative;
+    box-shadow: inset 0 0 30px rgba(0,20,0,0.5);
+    overflow-x: auto;
+}
+
+.code-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(138, 202, 138, 0.02) 0px,
+        rgba(0,0,0,0.02) 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+.code-block pre {
+    margin: 0;
+    color: #b0d0b0;
+}
+
+.tag { color: #8aca8a; }
+.attr { color: #d0b080; }
+.string { color: #b0d080; }
+.comment { color: #5a7e5a; }
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(10, 20, 10, 0.8);
+    border: 2px solid #5a7e5a;
+}
+
+th {
+    background: #1a2a1a;
+    color: #d0e8d0;
+    padding: 12px;
+    border-bottom: 2px solid #7c9a7c;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #3a5a3a;
+    color: #b0c8b0;
+}
+
+tr:hover td {
+    background: #1a2e1a;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background: #1a2a1a;
+    color: #c0e0c0;
+    padding: 12px 30px;
+    border: 2px solid #6a9a6a;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2a4a2a;
+    border-color: #8aca8a;
+    box-shadow: 0 0 20px rgba(138, 202, 138, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(138,202,138,0.2) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+/* Ссылка "назад" */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #8aca8a;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Сетка для примеров */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.example-card {
+    background: #1a2a1a;
+    border: 2px solid #5a7e5a;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.example-card:hover {
+    border-color: #8aca8a;
+    transform: translateY(-3px);
+}
+
+.example-card h3 {
+    color: #d0e8d0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.example-demo {
+    background: #0a120a;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 3px solid #8aca8a;
+}
+
+/* Формы */
+.form-demo {
+    background: #0f1a24;
+    padding: 25px;
+    border: 2px solid #5a7e5a;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b0d0b0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background: #1a2a1a;
+    border: 1px solid #5a7e5a;
+    color: #b0d0b0;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #8aca8a;
+    outline: none;
+}
+
+/* Подвал */
+.footer {
+    margin-top: 60px;
+    padding: 30px 0;
+    border-top: 2px solid #3a5a3a;
+    text-align: center;
+    color: #809880;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Сетка для карточек */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+/* Примеры тегов */
+.tag-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.tag-demo-item {
+    background: #0a100a;
+    padding: 8px 15px;
+    border: 1px solid #5a7e5a;
+    color: #b0d0b0;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.tag-demo-item:hover {
+    border-color: #8aca8a;
+    transform: scale(1.05);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 32px;
+        padding: 15px 30px;
+    }
+    
+    .header h1 span {
+        font-size: 16px;
+    }
+    
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .content-card {
+        padding: 15px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+    width: 12px;
+    background: #0a0c0a;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a2a1a;
+    border: 1px solid #5a7e5a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5a7e5a;
+    border: 2px solid #3a5a3a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8aca8a;
+}
+
+/* Стили для интерактивных примеров */
+.example-card {
+    transition: all 0.3s;
+}
+
+.example-card:hover {
+    transform: translateY(-3px);
+    border-color: #8aca8a !important;
+    box-shadow: 0 5px 20px rgba(138, 202, 138, 0.2);
+}
+
+/* Анимация для статистики */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#stat-result li {
+    animation: slideIn 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+#stat-result li:nth-child(1) { animation-delay: 0.1s; }
+#stat-result li:nth-child(2) { animation-delay: 0.2s; }
+#stat-result li:nth-child(3) { animation-delay: 0.3s; }
+#stat-result li:nth-child(4) { animation-delay: 0.4s; }
+#stat-result li:nth-child(5) { animation-delay: 0.5s; }

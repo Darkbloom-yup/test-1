@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Формы HTML - Учебник{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>📝 HTML Формы</h2>
+    <p>Формы используются для сбора данных от пользователей. Они могут содержать различные элементы ввода: текстовые поля, чекбоксы, радио-кнопки, выпадающие списки и кнопки.</p>
+    
+    <div class="code-block">
+        <pre>
+&lt;form action="/submit" method="POST"&gt;
+    &lt;!-- Элементы формы --&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Отправить"&gt;
+&lt;/form&gt;</pre>
+    </div>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>📋 Основные элементы форм</h3>
+        <table>
+            <tr>
+                <th>Тег</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>&lt;input&gt;</td>
+                <td>Поле ввода</td>
+            </tr>
+            <tr>
+                <td>&lt;textarea&gt;</td>
+                <td>Многострочное поле</td>
+            </tr>
+            <tr>
+                <td>&lt;select&gt;</td>
+                <td>Выпадающий список</td>
+            </tr>
+            <tr>
+                <td>&lt;button&gt;</td>
+                <td>Кнопка</td>
+            </tr>
+            <tr>
+                <td>&lt;label&gt;</td>
+                <td>Подпись к полю</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h3>🔤 Типы input</h3>
+        <table>
+            <tr>
+                <th>Тип</th>
+                <th>Описание</th>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>Текстовое поле</td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>Поле для пароля</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>Поле для email</td>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td>Числовое поле</td>
+            </tr>
+            <tr>
+                <td>checkbox</td>
+                <td>Флажок</td>
+            </tr>
+            <tr>
+                <td>radio</td>
+                <td>Радиокнопка</td>
+            </tr>
+            <tr>
+                <td>file</td>
+                <td>Загрузка файла</td>
+            </tr>
+            <tr>
+                <td>submit</td>
+                <td>Кнопка отправки</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="card">
+    <h3>📝 Пример формы</h3>
+    <div class="form-demo">
+        <form>
+            <div class="form-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" placeholder="Введите имя">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="email@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Пол:</label>
+                <input type="radio" name="gender" value="male"> Мужской
+                <input type="radio" name="gender" value="female"> Женский
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="subscribe"> Подписаться на рассылку
+                </label>
+            </div>
+            
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+    </div>
+    
+    <div class="code-block" style="margin-top: 20px;">
+        <pre>
+&lt;form&gt;
+    &lt;label for="name"&gt;Имя:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;button type="submit"&gt;Отправить&lt;/button&gt;
+&lt;/form&gt;</pre>
+    </div>
+</div>
+{% endblock %}

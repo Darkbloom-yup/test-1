@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Атрибуты событий — Rain World{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('attributes') }}" style="display: inline-block; margin-bottom: 20px; color: #8aca8a; text-decoration: none; font-size: 18px;">← Вернуться к атрибутам</a>
+
+<div class="content-card">
+    <h2>Атрибуты событий</h2>
+    <p>Срабатывают при действиях пользователя.</p>
+    
+    <div class="code-block">
+        <pre>
+<span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="string">"alert('Привет!')"</span><span class="tag">&gt;</span>Нажми меня<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">onmouseover</span>=<span class="string">"this.style.color='red'"</span><span class="tag">&gt;</span>Наведи мышь<span class="tag">&lt;/div&gt;</span></pre>
+    </div>
+
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Событие</th>
+        </tr>
+        <tr>
+            <td>onclick</td>
+            <td>Клик мышью</td>
+        </tr>
+        <tr>
+            <td>ondblclick</td>
+            <td>Двойной клик</td>
+        </tr>
+        <tr>
+            <td>onmouseover</td>
+            <td>Наведение курсора</td>
+        </tr>
+        <tr>
+            <td>onmouseout</td>
+            <td>Уход курсора</td>
+        </tr>
+        <tr>
+            <td>onchange</td>
+            <td>Изменение значения</td>
+        </tr>
+        <tr>
+            <td>onkeydown</td>
+            <td>Нажатие клавиши</td>
+        </tr>
+        <tr>
+            <td>onload</td>
+            <td>Загрузка страницы</td>
+        </tr>
+        <tr>
+            <td>onsubmit</td>
+            <td>Отправка формы</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

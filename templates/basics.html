@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Базовые атрибуты — Rain World{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('attributes') }}" style="display: inline-block; margin-bottom: 20px; color: #8aca8a; text-decoration: none; font-size: 18px;">← Вернуться к атрибутам</a>
+
+<div class="content-card">
+    <h2>Базовые атрибуты</h2>
+    <p>Основные атрибуты, которые используются чаще всего.</p>
+    
+    <div class="code-block">
+        <pre>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://example.com"</span><span class="tag">&gt;</span>Ссылка<span class="tag">&lt;/a&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"image.jpg"</span> <span class="attr">alt</span>=<span class="string">"Описание"</span><span class="tag">&gt;</span></pre>
+    </div>
+
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Для тегов</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>href</td>
+            <td>&lt;a&gt;, &lt;link&gt;</td>
+            <td>URL ссылки</td>
+        </tr>
+        <tr>
+            <td>src</td>
+            <td>&lt;img&gt;, &lt;script&gt;</td>
+            <td>Путь к файлу</td>
+        </tr>
+        <tr>
+            <td>alt</td>
+            <td>&lt;img&gt;</td>
+            <td>Альтернативный текст</td>
+        </tr>
+        <tr>
+            <td>width/height</td>
+            <td>&lt;img&gt;</td>
+            <td>Размеры изображения</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

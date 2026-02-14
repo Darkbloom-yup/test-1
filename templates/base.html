@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rain World - учебник HTML{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>RAIN WORLD<br><span>учебник HTML</span></h1>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}class="active"{% endif %}>Главная</a></li>
+                <li><a href="{{ url_for('tags') }}" {% if request.endpoint == 'tags' %}class="active"{% endif %}>Теги</a></li>
+                <li><a href="{{ url_for('attributes') }}" {% if request.endpoint == 'attributes' %}class="active"{% endif %}>Атрибуты</a></li>
+                <li><a href="{{ url_for('forms') }}" {% if request.endpoint == 'forms' %}class="active"{% endif %}>Формы</a></li>
+                <li><a href="{{ url_for('examples') }}" {% if request.endpoint == 'examples' %}class="active"{% endif %}>Примеры</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            <p>⚡ Цикл продолжается... | Учебник HTML в мире Rain World ⚡</p>
+            <p style="margin-top: 10px; font-size: 10px;">
+                Карма 5 • Врата открыты • Дождь идет
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

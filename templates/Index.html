@@ -1,0 +1,327 @@
+{% extends "base.html" %}
+
+{% block title %}Rain World - главная{% endblock %}
+
+{% block content %}
+<!-- Врата Кармы -->
+<a href="{{ url_for('index') }}" style="display: flex; justify-content: center; margin: 20px 0 40px;">
+    <img src="{{ url_for('static', filename='images/Karma_Gates_10.png') }}" alt="Врата кармы" style="width: 120px; image-rendering: pixelated; border: 4px solid #8aba8a; background: #1a2a1a; padding: 10px; box-shadow: 0 0 30px #5a9e5a;">
+</a>
+
+<!-- Навигация по уровням кармы -->
+<div style="display: flex; justify-content: center; gap: 15px; margin: 40px 0; flex-wrap: wrap;">
+    <a href="{{ url_for('basics') }}" style="text-align: center; transition: all 0.3s; filter: drop-shadow(0 0 5px #5a7e5a); text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_1.png') }}" style="width: 64px; height: 64px; image-rendering: pixelated; border: 3px solid #5a7e5a; background: #1a2a1a; padding: 5px;">
+        <span style="display: block; margin-top: 8px; color: #b0d0b0; font-size: 14px; text-transform: uppercase;">Основы</span>
+    </a>
+    <a href="{{ url_for('tags') }}" style="text-align: center; transition: all 0.3s; filter: drop-shadow(0 0 5px #5a7e5a); text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_2.png') }}" style="width: 64px; height: 64px; image-rendering: pixelated; border: 3px solid #5a7e5a; background: #1a2a1a; padding: 5px;">
+        <span style="display: block; margin-top: 8px; color: #b0d0b0; font-size: 14px; text-transform: uppercase;">Теги</span>
+    </a>
+    <a href="{{ url_for('attributes') }}" style="text-align: center; transition: all 0.3s; filter: drop-shadow(0 0 5px #5a7e5a); text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_3.png') }}" style="width: 64px; height: 64px; image-rendering: pixelated; border: 3px solid #5a7e5a; background: #1a2a1a; padding: 5px;">
+        <span style="display: block; margin-top: 8px; color: #b0d0b0; font-size: 14px; text-transform: uppercase;">Атрибуты</span>
+    </a>
+    <a href="{{ url_for('forms') }}" style="text-align: center; transition: all 0.3s; filter: drop-shadow(0 0 5px #5a7e5a); text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_4.png') }}" style="width: 64px; height: 64px; image-rendering: pixelated; border: 3px solid #5a7e5a; background: #1a2a1a; padding: 5px;">
+        <span style="display: block; margin-top: 8px; color: #b0d0b0; font-size: 14px; text-transform: uppercase;">Формы</span>
+    </a>
+    <a href="{{ url_for('examples') }}" style="text-align: center; transition: all 0.3s; filter: drop-shadow(0 0 5px #5a7e5a); text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_5.png') }}" style="width: 64px; height: 64px; image-rendering: pixelated; border: 3px solid #5a7e5a; background: #1a2a1a; padding: 5px;">
+        <span style="display: block; margin-top: 8px; color: #b0d0b0; font-size: 14px; text-transform: uppercase;">Примеры</span>
+    </a>
+</div>
+
+
+<!-- Основы -->
+<div class="content-card">
+    <h2>Структура HTML</h2>
+    <div class="code-block">
+        <pre>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"ru"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;head&gt;</span>
+        <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;title&gt;</span>Мой сайт<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;/head&gt;</span>
+    <span class="tag">&lt;body&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Привет, мир!<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+    </div>
+    <a href="{{ url_for('basics') }}" class="btn">Изучить основы →</a>
+</div>
+
+<!-- Существа мира -->
+<h2 style="color: #b0d0b0; margin: 40px 0 20px; border-left: 4px solid #8aca8a; padding-left: 15px;">
+    Обитатели мира HTML
+</h2>
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0;">
+    <a href="{{ url_for('tags') }}" style="background: rgba(10, 20, 10, 0.8); border: 2px solid #5a7e5a; padding: 20px; text-align: center; text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Vulture.png') }}" style="width: 80px; height: 80px; image-rendering: pixelated; margin-bottom: 10px;">
+        <h3 style="color: #d0e8d0; font-size: 18px;">Теги</h3>
+        <p style="color: #90a890; font-size: 12px;">Базовые элементы разметки</p>
+    </a>
+    <a href="{{ url_for('attributes') }}" style="background: rgba(10, 20, 10, 0.8); border: 2px solid #5a7e5a; padding: 20px; text-align: center; text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Scavenger.png') }}" style="width: 80px; height: 80px; image-rendering: pixelated; margin-bottom: 10px;">
+        <h3 style="color: #d0e8d0; font-size: 18px;">Атрибуты</h3>
+        <p style="color: #90a890; font-size: 12px;">Дополнительные свойства</p>
+    </a>
+    <a href="{{ url_for('examples') }}" style="background: rgba(10, 20, 10, 0.8); border: 2px solid #5a7e5a; padding: 20px; text-align: center; text-decoration: none; color: inherit;">
+        <img src="{{ url_for('static', filename='images/Icon_Deer.png') }}" style="width: 80px; height: 80px; image-rendering: pixelated; margin-bottom: 10px;">
+        <h3 style="color: #d0e8d0; font-size: 18px;">Примеры</h3>
+        <p style="color: #90a890; font-size: 12px;">Живой код</p>
+    </a>
+</div>
+
+<!-- Теги -->
+<div class="content-card">
+    <h2>Основные теги</h2>
+    <table>
+        <tr>
+            <th>Тег</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td>&lt;h1&gt; - &lt;h6&gt;</td>
+            <td>Заголовки</td>
+            <td>&lt;h1&gt;Заголовок&lt;/h1&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;p&gt;</td>
+            <td>Абзац</td>
+            <td>&lt;p&gt;Текст&lt;/p&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;a&gt;</td>
+            <td>Ссылка</td>
+            <td>&lt;a href="#"&gt;ссылка&lt;/a&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;img&gt;</td>
+            <td>Изображение</td>
+            <td>&lt;img src="img.jpg"&gt;</td>
+        </tr>
+    </table>
+    <a href="{{ url_for('tags') }}" class="btn" style="margin-top: 20px;">Все теги →</a>
+</div>
+
+<!-- Примеры кода - интерактивные -->
+<div class="content-card">
+    <h2>🎮 ЖИВЫЕ ПРИМЕРЫ КОДА</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 30px 0;">
+        <div class="example-card" style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px;">
+            <h3 style="color: #8aca8a;">🔤 Текст</h3>
+            <div style="background: #0a120a; padding: 15px;">
+                <p style="color: #b0d0b0;"><strong>Жирный</strong> и <em>курсив</em></p>
+                <p style="color: #b0d0b0;"><mark>Выделенный</mark> текст</p>
+                <p style="color: #b0d0b0;"><small>Мелкий</small> и <del>зачеркнутый</del></p>
+            </div>
+            <div class="code-block" style="margin-top: 15px; padding: 10px;">
+                &lt;p&gt;&lt;strong&gt;Жирный&lt;/strong&gt;...&lt;/p&gt;
+            </div>
+        </div>
+        
+        <div class="example-card" style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px;">
+            <h3 style="color: #8aca8a;">🔗 Ссылки</h3>
+            <div style="background: #0a120a; padding: 15px;">
+                <a href="#" style="color: #8aca8a;">Обычная ссылка</a><br>
+                <a href="#" target="_blank" style="color: #8aca8a;">Новая вкладка →</a>
+            </div>
+            <div class="code-block" style="margin-top: 15px; padding: 10px;">
+                &lt;a href="#"&gt;ссылка&lt;/a&gt;
+            </div>
+        </div>
+        
+        <div class="example-card" style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px;">
+            <h3 style="color: #8aca8a;">📋 Списки</h3>
+            <div style="background: #0a120a; padding: 15px;">
+                <ul style="color: #b0d0b0; padding-left: 20px;">
+                    <li>Первый пункт</li>
+                    <li>Второй пункт</li>
+                    <li>Третий пункт</li>
+                </ul>
+            </div>
+            <div class="code-block" style="margin-top: 15px; padding: 10px;">
+                &lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;
+            </div>
+        </div>
+        
+        <div class="example-card" style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px;">
+            <h3 style="color: #8aca8a;">🎯 Таблица</h3>
+            <div style="background: #0a120a; padding: 15px;">
+                <table style="width: 100%;">
+                    <tr><th style="border: 1px solid #5a7e5a;">Имя</th><th style="border: 1px solid #5a7e5a;">Возраст</th></tr>
+                    <tr><td style="border: 1px solid #5a7e5a;">Анна</td><td style="border: 1px solid #5a7e5a;">25</td></tr>
+                </table>
+            </div>
+            <div class="code-block" style="margin-top: 15px; padding: 10px;">
+                &lt;table&gt;&lt;tr&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+            </div>
+        </div>
+    </div>
+    
+    <a href="{{ url_for('examples') }}" class="btn">Больше примеров →</a>
+</div>
+<!-- Три Слизнекота - определение уровня -->
+<div style="text-align: center; margin: 40px 0;">
+    <h2 style="color: #b0d0b0; border-left: 4px solid #8aca8a; padding-left: 15px; margin-bottom: 20px;">
+        Кто ты сегодня в мире программирования?
+    </h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <button onclick="showLevel('monk')" style="background: rgba(20, 30, 20, 0.9); border: 3px solid #f0d870; padding: 20px; cursor: pointer; transition: all 0.3s; width: 100%;">
+            <img src="{{ url_for('static', filename='images/Icon_Slugcat_Yellow.png') }}" style="width: 96px; height: 96px; image-rendering: pixelated; margin-bottom: 15px;">
+            <h3 style="color: #f0d870; font-size: 24px; margin-bottom: 5px;">МОНАХ</h3>
+            <p style="color: #b0d0b0; font-size: 14px;">Начальный уровень</p>
+            <p style="color: #90a890; font-size: 12px; margin-top: 10px;">Только начинаешь путь</p>
+        </button>
+        
+        <button onclick="showLevel('survivor')" style="background: rgba(20, 30, 20, 0.9); border: 3px solid #e0e8e0; padding: 20px; cursor: pointer; transition: all 0.3s; width: 100%;">
+            <img src="{{ url_for('static', filename='images/Icon_Slugcat_White.png') }}" style="width: 96px; height: 96px; image-rendering: pixelated; margin-bottom: 15px;">
+            <h3 style="color: #e0e8e0; font-size: 24px; margin-bottom: 5px;">ВЫЖИВШИЙ</h3>
+            <p style="color: #b0d0b0; font-size: 14px;">Средний уровень</p>
+            <p style="color: #90a890; font-size: 12px; margin-top: 10px;">Уже что-то умеешь</p>
+        </button>
+        
+        <button onclick="showLevel('hunter')" style="background: rgba(20, 30, 20, 0.9); border: 3px solid #d06060; padding: 20px; cursor: pointer; transition: all 0.3s; width: 100%;">
+            <img src="{{ url_for('static', filename='images/Icon_Slugcat_Red.png') }}" style="width: 96px; height: 96px; image-rendering: pixelated; margin-bottom: 15px;">
+            <h3 style="color: #d06060; font-size: 24px; margin-bottom: 5px;">ОХОТНИК</h3>
+            <p style="color: #b0d0b0; font-size: 14px;">Профессионал</p>
+            <p style="color: #90a890; font-size: 12px; margin-top: 10px;">Мастер своего дела</p>
+        </button>
+    </div>
+</div>
+
+<!-- Блок со случайной статистикой -->
+<div id="stat-result" style="display: none;" class="content-card">
+    <h2>📊 ТВОЯ СТАТИСТИКА</h2>
+    <div id="stat-content" style="text-align: center; padding: 20px;"></div>
+</div>
+<script>
+function showLevel(level) {
+    const resultDiv = document.getElementById('stat-result');
+    const contentDiv = document.getElementById('stat-content');
+    
+    // Статистика для каждого уровня
+    const stats = {
+        monk: {
+            title: "🧘 МОНАХ — НАЧАЛЬНЫЙ УРОВЕНЬ",
+            description: "Ты только начинаешь свой путь в программировании. Как Монах из Rain World, ты исследуешь мир HTML без лишних сложностей.",
+            stats: [
+                "⭐ Знаешь основные теги (<h1>, <p>, <a>)",
+                "📚 Изучено 15% материала",
+                "🎯 Следующая цель: выучить атрибуты",
+                "💪 Карма: 1",
+                "⏳ Время в пути: 0 циклов"
+            ],
+            fact: "Монах — идеальный выбор для новичков. Мир не такой враждебный!",
+            color: "#f0d870"
+        },
+        survivor: {
+            title: "⚔️ ВЫЖИВШИЙ — СРЕДНИЙ УРОВЕНЬ",
+            description: "Ты уже прошел через многое. Как Выживший, ты знаешь основы и готов к новым вызовам.",
+            stats: [
+                "⭐ Уверенно используешь формы и таблицы",
+                "📚 Изучено 45% материала",
+                "🎯 Следующая цель: освоить CSS-стили",
+                "💪 Карма: 3",
+                "⏳ Время в пути: 47 циклов"
+            ],
+            fact: "Выживший — баланс между сложностью и обучением. Ты на правильном пути!",
+            color: "#e0e8e0"
+        },
+        hunter: {
+            title: "🏹 ОХОТНИК — ПРОФЕССИОНАЛ",
+            description: "Ты — элита! Как Охотник, ты не просто выживаешь — ты создаешь сложные проекты и учишь других.",
+            stats: [
+                "⭐ Знаешь все теги и атрибуты",
+                "📚 Изучено 90% материала",
+                "🎯 Следующая цель: стать гуру",
+                "💪 Карма: 5",
+                "⏳ Время в пути: 127 циклов"
+            ],
+            fact: "Охотник — для тех, кто готов к настоящему вызову. Мир принадлежит тебе!",
+            color: "#d06060"
+        }
+    };
+    
+    const currentStats = stats[level];
+    
+    // Генерируем случайные числа для статистики
+    const randomProjects = Math.floor(Math.random() * 50) + 10;
+    const randomLines = Math.floor(Math.random() * 1000) + 500;
+    const randomBugs = Math.floor(Math.random() * 30) + 5;
+    const randomCycles = Math.floor(Math.random() * 200) + 50;
+    
+    // Создаем HTML для статистики
+    let html = `
+        <h3 style="color: ${currentStats.color}; font-size: 28px; margin-bottom: 20px;">${currentStats.title}</h3>
+        <p style="color: #b0d0b0; font-size: 16px; margin-bottom: 30px;">${currentStats.description}</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; text-align: left; margin-bottom: 30px;">
+            <div style="background: #1a2a1a; padding: 15px; border-left: 3px solid ${currentStats.color};">
+                <h4 style="color: ${currentStats.color}; margin-bottom: 10px;">📊 ОСНОВНЫЕ ПОКАЗАТЕЛИ</h4>
+                <ul style="list-style: none;">
+    `;
+    
+    currentStats.stats.forEach(stat => {
+        html += `<li style="color: #b0d0b0; margin-bottom: 8px;">${stat}</li>`;
+    });
+    
+    html += `
+                </ul>
+            </div>
+            
+            <div style="background: #1a2a1a; padding: 15px; border-left: 3px solid ${currentStats.color};">
+                <h4 style="color: ${currentStats.color}; margin-bottom: 10px;">🎲 СЛУЧАЙНАЯ СТАТИСТИКА</h4>
+                <p style="color: #b0d0b0; margin-bottom: 8px;">📁 Проектов создано: ${randomProjects}</p>
+                <p style="color: #b0d0b0; margin-bottom: 8px;">📝 Строк кода: ${randomLines}</p>
+                <p style="color: #b0d0b0; margin-bottom: 8px;">🐛 Багов исправлено: ${randomBugs}</p>
+                <p style="color: #b0d0b0; margin-bottom: 8px;">🔄 Циклов пережито: ${randomCycles}</p>
+            </div>
+        </div>
+        
+        <div style="background: #0a120a; border: 2px solid ${currentStats.color}; padding: 15px; margin-bottom: 20px;">
+            <p style="color: ${currentStats.color}; font-style: italic;">💡 Знаешь ли ты? ${currentStats.fact}</p>
+        </div>
+        
+        <div style="background: #1a2a1a; padding: 20px; border: 2px solid #5a7e5a;">
+            <h4 style="color: ${currentStats.color}; margin-bottom: 15px;">📈 ТВОЙ ПРОГРЕСС</h4>
+            <div style="background: #0a100a; height: 20px; border: 1px solid #5a7e5a;">
+                <div style="background: ${currentStats.color}; width: ${level === 'monk' ? '15' : level === 'survivor' ? '45' : '90'}%; height: 100%;"></div>
+            </div>
+            <p style="color: #b0d0b0; text-align: right; margin-top: 5px;">
+                ${level === 'monk' ? '15' : level === 'survivor' ? '45' : '90'}% к мастерству
+            </p>
+        </div>
+    `;
+    
+    contentDiv.innerHTML = html;
+    resultDiv.style.display = 'block';
+    
+    // Плавный скролл к результату
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+
+<style>
+    button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px currentColor;
+        transition: all 0.3s;
+    }
+    
+    #stat-result {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}

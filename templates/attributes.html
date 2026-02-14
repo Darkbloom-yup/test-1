@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+
+{% block title %}Атрибуты HTML - Учебник{% endblock %}
+
+{% block content %}
+<!-- Навигация по разделам атрибутов -->
+<div style="display: flex; justify-content: center; gap: 15px; margin: 30px 0 40px; flex-wrap: wrap;">
+    <a href="{{ url_for('basics') }}" style="background: #1f2c3a; border: 2px solid #5a7e5a; padding: 12px 25px; color: #b0d0b0; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_1.png') }}" style="width: 32px; height: 32px; image-rendering: pixelated;">
+        <span>Базовые</span>
+    </a>
+    
+    <a href="{{ url_for('global_attrs') }}" style="background: #1f2c3a; border: 2px solid #5a7e5a; padding: 12px 25px; color: #b0d0b0; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_2.png') }}" style="width: 32px; height: 32px; image-rendering: pixelated;">
+        <span>Глобальные</span>
+    </a>
+    
+    <a href="{{ url_for('forms') }}" style="background: #1f2c3a; border: 2px solid #5a7e5a; padding: 12px 25px; color: #b0d0b0; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_3.png') }}" style="width: 32px; height: 32px; image-rendering: pixelated;">
+        <span>Для форм</span>
+    </a>
+    
+    <a href="{{ url_for('events') }}" style="background: #1f2c3a; border: 2px solid #5a7e5a; padding: 12px 25px; color: #b0d0b0; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_4.png') }}" style="width: 32px; height: 32px; image-rendering: pixelated;">
+        <span>События</span>
+    </a>
+    
+    <a href="{{ url_for('boolean') }}" style="background: #1f2c3a; border: 2px solid #5a7e5a; padding: 12px 25px; color: #b0d0b0; text-decoration: none; font-size: 16px; display: flex; align-items: center; gap: 10px; transition: all 0.3s;">
+        <img src="{{ url_for('static', filename='images/Icon_Karma_5.png') }}" style="width: 32px; height: 32px; image-rendering: pixelated;">
+        <span>Булевы</span>
+    </a>
+</div>
+
+<div class="content-card">
+    <h2>⚙️ Атрибуты HTML</h2>
+    <p>Атрибуты предоставляют дополнительную информацию об HTML-элементах. Они всегда указываются в открывающем теге и обычно имеют формат имя="значение".</p>
+    
+    <div class="code-block">
+        <pre>
+&lt;tag <span class="attr">атрибут</span>=<span class="string">"значение"</span>&gt;содержимое&lt;/tag&gt;
+&lt;a <span class="attr">href</span>=<span class="string">"https://example.com"</span>&gt;Ссылка&lt;/a&gt;</pre>
+    </div>
+</div>
+
+<!-- ГЛОБАЛЬНЫЕ АТРИБУТЫ -->
+<div class="content-card">
+    <h2>🌍 Глобальные атрибуты</h2>
+    <p>Работают с любыми HTML-тегами:</p>
+    
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">class</span></td>
+            <td>Класс элемента (для CSS)</td>
+            <td>class="header"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">id</span></td>
+            <td>Уникальный идентификатор</td>
+            <td>id="main-title"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">style</span></td>
+            <td>Inline CSS стили</td>
+            <td>style="color: red;"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">lang</span></td>
+            <td>Язык содержимого</td>
+            <td>lang="ru"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">data-*</span></td>
+            <td>Пользовательские данные</td>
+            <td>data-id="123"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">title</span></td>
+            <td>Всплывающая подсказка</td>
+            <td>title="Подсказка"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">hidden</span></td>
+            <td>Скрывает элемент</td>
+            <td>hidden</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">tabindex</span></td>
+            <td>Порядок табуляции</td>
+            <td>tabindex="1"</td>
+        </tr>
+    </table>
+</div>
+
+<!-- АТРИБУТЫ ДЛЯ ССЫЛОК -->
+<div class="content-card">
+    <h2>🔗 Атрибуты для ссылок</h2>
+    <p>Используются с тегом &lt;a&gt; для создания гиперссылок:</p>
+    
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">href</span></td>
+            <td>URL ссылки</td>
+            <td>href="https://example.com"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">target</span></td>
+            <td>Где открыть (_blank, _self)</td>
+            <td>target="_blank"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">rel</span></td>
+            <td>Отношение к ссылке</td>
+            <td>rel="noopener"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">download</span></td>
+            <td>Скачать файл</td>
+            <td>download="file.pdf"</td>
+        </tr>
+    </table>
+    
+    <div class="code-block">
+        <pre>
+&lt;a href="page.html" target="_blank" rel="noopener"&gt;
+    Открыть в новой вкладке
+&lt;/a&gt;</pre>
+    </div>
+</div>
+
+<!-- АТРИБУТЫ ДЛЯ ИЗОБРАЖЕНИЙ -->
+<div class="content-card">
+    <h2>🖼️ Атрибуты для изображений</h2>
+    <p>Используются с тегом &lt;img&gt; для настройки изображений:</p>
+    
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Описание</th>
+            <th>Пример</th>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">src</span></td>
+            <td>Путь к изображению</td>
+            <td>src="photo.jpg"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">alt</span></td>
+            <td>Альтернативный текст</td>
+            <td>alt="Красивый закат"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">width</span></td>
+            <td>Ширина (px или %)</td>
+            <td>width="800"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">height</span></td>
+            <td>Высота (px или %)</td>
+            <td>height="600"</td>
+        </tr>
+        <tr>
+            <td><span style="color: #8aca8a;">loading</span></td>
+            <td>Ленивая загрузка</td>
+            <td>loading="lazy"</td>
+        </tr>
+    </table>
+    
+    <div class="code-block">
+        <pre>
+&lt;img src="photo.jpg" 
+     alt="Красивый закат" 
+     width="800" 
+     height="600" 
+     loading="lazy"&gt;</pre>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Булевы атрибуты — Rain World{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('attributes') }}" style="display: inline-block; margin-bottom: 20px; color: #8aca8a; text-decoration: none; font-size: 18px;">← Вернуться к атрибутам</a>
+
+<div class="content-card">
+    <h2>Булевы атрибуты</h2>
+    <p>Атрибуты, которые не требуют значения — их наличие уже включает функцию.</p>
+    
+    <div class="code-block">
+        <pre>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span><span class="tag">&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">disabled</span><span class="tag">&gt;</span>Неактивно<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">readonly</span><span class="tag">&gt;</span></pre>
+    </div>
+
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>checked</td>
+            <td>Чекбокс или радио отмечены по умолчанию</td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>Элемент отключен (нельзя взаимодействовать)</td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>Поле только для чтения</td>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>Поле обязательно для заполнения</td>
+        </tr>
+        <tr>
+            <td>multiple</td>
+            <td>Можно выбрать несколько вариантов</td>
+        </tr>
+        <tr>
+            <td>autofocus</td>
+            <td>Автоматический фокус на элементе</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Элемент скрыт</td>
+        </tr>
+    </table>
+
+    <h3 style="color: #d0e8d0; margin: 30px 0 15px;">Примеры:</h3>
+    
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px; text-align: center;">
+            <div style="color: #8aca8a; margin-bottom: 10px;">checked</div>
+            <input type="checkbox" checked> Отмечено
+        </div>
+        
+        <div style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px; text-align: center;">
+            <div style="color: #8aca8a; margin-bottom: 10px;">disabled</div>
+            <button disabled style="background: #2a3a2a; color: #5a7e5a; border: none; padding: 5px 15px;">Неактивно</button>
+        </div>
+        
+        <div style="background: #1a2a1a; border: 2px solid #5a7e5a; padding: 20px; text-align: center;">
+            <div style="color: #8aca8a; margin-bottom: 10px;">readonly</div>
+            <input type="text" value="Только чтение" readonly style="background: #2a3a2a; border: 1px solid #5a7e5a; color: #5a7e5a; padding: 5px; width: 100%;">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block title %}Теги HTML - Учебник{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>🏷️ Все теги HTML</h2>
+    <p>Теги — это основные строительные блоки HTML. Они заключаются в угловые скобки и обычно имеют открывающий и закрывающий теги.</p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>📝 Текстовые теги</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;h1&gt;Заголовок&lt;/h1&gt;</div>
+            <div class="tag-demo-item">&lt;h2&gt;Подзаголовок&lt;/h2&gt;</div>
+            <div class="tag-demo-item">&lt;p&gt;Абзац&lt;/p&gt;</div>
+            <div class="tag-demo-item">&lt;strong&gt;Жирный&lt;/strong&gt;</div>
+            <div class="tag-demo-item">&lt;em&gt;Курсив&lt;/em&gt;</div>
+            <div class="tag-demo-item">&lt;mark&gt;Выделено&lt;/mark&gt;</div>
+            <div class="tag-demo-item">&lt;small&gt;Мелкий&lt;/small&gt;</div>
+            <div class="tag-demo-item">&lt;del&gt;Зачеркнуто&lt;/del&gt;</div>
+            <div class="tag-demo-item">&lt;ins&gt;Вставлено&lt;/ins&gt;</div>
+        </div>
+        
+        <h4 style="margin-top: 20px;">Пример:</h4>
+        <div class="code-block">
+            <pre>
+&lt;h1&gt;Заголовок статьи&lt;/h1&gt;
+&lt;p&gt;Это &lt;strong&gt;важный&lt;/strong&gt; текст с &lt;em&gt;акцентом&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;А это &lt;mark&gt;выделенный&lt;/mark&gt; фрагмент.&lt;/p&gt;</pre>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3>🔗 Ссылки и изображения</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;a&gt;Ссылка&lt;/a&gt;</div>
+            <div class="tag-demo-item">&lt;img&gt;</div>
+            <div class="tag-demo-item">&lt;map&gt;</div>
+            <div class="tag-demo-item">&lt;area&gt;</div>
+            <div class="tag-demo-item">&lt;figure&gt;</div>
+            <div class="tag-demo-item">&lt;figcaption&gt;</div>
+        </div>
+        
+        <div class="code-block">
+            <pre>
+&lt;a href="https://example.com"&gt;
+    Посетить сайт
+&lt;/a&gt;
+
+&lt;img src="image.jpg" 
+     alt="Описание"
+     width="300"&gt;</pre>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3>📋 Списки</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;ul&gt;</div>
+            <div class="tag-demo-item">&lt;ol&gt;</div>
+            <div class="tag-demo-item">&lt;li&gt;</div>
+            <div class="tag-demo-item">&lt;dl&gt;</div>
+            <div class="tag-demo-item">&lt;dt&gt;</div>
+            <div class="tag-demo-item">&lt;dd&gt;</div>
+        </div>
+        
+        <div class="code-block">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Первый пункт&lt;/li&gt;
+    &lt;li&gt;Второй пункт&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Шаг 1&lt;/li&gt;
+    &lt;li&gt;Шаг 2&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        </div>
+        
+        <h4>Результат:</h4>
+        <ul>
+            <li>Первый пункт</li>
+            <li>Второй пункт</li>
+        </ul>
+        <ol>
+            <li>Шаг 1</li>
+            <li>Шаг 2</li>
+        </ol>
+    </div>
+    
+    <div class="card">
+        <h3>📊 Таблицы</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;table&gt;</div>
+            <div class="tag-demo-item">&lt;tr&gt;</div>
+            <div class="tag-demo-item">&lt;td&gt;</div>
+            <div class="tag-demo-item">&lt;th&gt;</div>
+            <div class="tag-demo-item">&lt;thead&gt;</div>
+            <div class="tag-demo-item">&lt;tbody&gt;</div>
+            <div class="tag-demo-item">&lt;tfoot&gt;</div>
+            <div class="tag-demo-item">&lt;caption&gt;</div>
+        </div>
+        
+        <div class="code-block">
+            <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Имя&lt;/th&gt;
+        &lt;th&gt;Возраст&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Анна&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3>🎨 Семантические теги (HTML5)</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;header&gt;</div>
+            <div class="tag-demo-item">&lt;nav&gt;</div>
+            <div class="tag-demo-item">&lt;main&gt;</div>
+            <div class="tag-demo-item">&lt;article&gt;</div>
+            <div class="tag-demo-item">&lt;section&gt;</div>
+            <div class="tag-demo-item">&lt;aside&gt;</div>
+            <div class="tag-demo-item">&lt;footer&gt;</div>
+            <div class="tag-demo-item">&lt;address&gt;</div>
+        </div>
+        
+        <div class="code-block">
+            <pre>
+&lt;header&gt;
+    &lt;h1&gt;Мой сайт&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Статья&lt;/h2&gt;
+        &lt;p&gt;Текст статьи&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;Копирайт&lt;/p&gt;
+&lt;/footer&gt;</pre>
+        </div>
+    </div>
+    
+    <div class="card">
+        <h3>🔧 Технические теги</h3>
+        <div class="tag-demo">
+            <div class="tag-demo-item">&lt;html&gt;</div>
+            <div class="tag-demo-item">&lt;head&gt;</div>
+            <div class="tag-demo-item">&lt;body&gt;</div>
+            <div class="tag-demo-item">&lt;title&gt;</div>
+            <div class="tag-demo-item">&lt;meta&gt;</div>
+            <div class="tag-demo-item">&lt;link&gt;</div>
+            <div class="tag-demo-item">&lt;script&gt;</div>
+            <div class="tag-demo-item">&lt;style&gt;</div>
+        </div>
+        
+        <div class="code-block">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя страница&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    ...
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h3>📌 Важно!</h3>
+    <div class="alert alert-info">
+        <strong>Все теги должны быть правильно закрыты!</strong> 
+        Некоторые теги (например, &lt;img&gt;, &lt;br&gt;, &lt;input&gt;) являются 
+        самозакрывающимися и не требуют закрывающего тега.
+    </div>
+</div>
+{% endblock %}

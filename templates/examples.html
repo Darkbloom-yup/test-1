@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %}Примеры HTML кода{% endblock %}
+
+{% block content %}
+<div class="content-card">
+    <h2>🎮 Примеры HTML кода</h2>
+    <p>Здесь собраны живые примеры различных HTML элементов.</p>
+</div>
+
+<div class="grid">
+    <div class="card">
+        <h3>📝 Текст и заголовки</h3>
+        <div class="code-block">
+            <pre>
+&lt;h1&gt;Заголовок 1&lt;/h1&gt;
+&lt;h2&gt;Заголовок 2&lt;/h2&gt;
+&lt;h3&gt;Заголовок 3&lt;/h3&gt;
+&lt;p&gt;Обычный текст&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Жирный&lt;/strong&gt; и &lt;em&gt;курсив&lt;/em&gt;&lt;/p&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <h1 style="color: #8aca8a; font-size: 24px;">Заголовок 1</h1>
+            <h2 style="color: #8aca8a; font-size: 20px;">Заголовок 2</h2>
+            <p><strong>Жирный</strong> и <em>курсив</em></p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>🔗 Ссылки и кнопки</h3>
+        <div class="code-block">
+            <pre>
+&lt;a href="#"&gt;Обычная ссылка&lt;/a&gt;
+&lt;a href="#" target="_blank"&gt;Новая вкладка&lt;/a&gt;
+&lt;button&gt;Кнопка&lt;/button&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <a href="#" style="color: #8aca8a;">Обычная ссылка</a><br>
+            <a href="#" target="_blank" style="color: #8aca8a;">Новая вкладка →</a><br>
+            <button class="btn" style="margin-top: 10px;">Кнопка</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>📋 Списки</h3>
+        <div class="code-block">
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Пункт 1&lt;/li&gt;
+    &lt;li&gt;Пункт 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Шаг 1&lt;/li&gt;
+    &lt;li&gt;Шаг 2&lt;/li&gt;
+&lt;/ol&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <ul style="color: #b0d0b0; padding-left: 20px;">
+                <li>Пункт 1</li>
+                <li>Пункт 2</li>
+            </ul>
+            <ol style="color: #b0d0b0; padding-left: 20px;">
+                <li>Шаг 1</li>
+                <li>Шаг 2</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>📊 Таблицы</h3>
+        <div class="code-block">
+            <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Имя&lt;/th&gt;
+        &lt;th&gt;Возраст&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Анна&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <table style="width: 100%;">
+                <tr><th style="border: 1px solid #5a7e5a;">Имя</th><th style="border: 1px solid #5a7e5a;">Возраст</th></tr>
+                <tr><td style="border: 1px solid #5a7e5a;">Анна</td><td style="border: 1px solid #5a7e5a;">25</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>🎯 Формы</h3>
+        <div class="code-block">
+            <pre>
+&lt;form&gt;
+    &lt;label&gt;Имя:&lt;/label&gt;
+    &lt;input type="text"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <label style="color: #b0d0b0; display: block;">Имя:</label>
+            <input type="text" style="background: #1a2a1a; border: 1px solid #5a7e5a; color: #b0d0b0; padding: 5px; margin-bottom: 10px; width: 100%;">
+            <input type="submit" value="Отправить" class="btn" style="padding: 8px 15px;">
+        </div>
+    </div>
+
+    <!-- ОБНОВЛЕННЫЙ РАЗДЕЛ С ИЗОБРАЖЕНИЯМИ -->
+    <div class="card">
+        <h3>🖼️ Изображения</h3>
+        <div class="code-block">
+            <pre>
+&lt;img src="image.jpg" 
+     alt="Описание"
+     width="200"&gt;</pre>
+        </div>
+        <div style="background: #1a2a1a; padding: 15px;">
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <img src="{{ url_for('static', filename='images/Rain-World-scavenger.webp') }}" alt="Мусорщик" style="width: 150px; image-rendering: pixelated; border: 3px solid #5a7e5a;">
+                    <p style="color: #b0d0b0; margin-top: 10px;">Мусорщик (Scavenger)</p>
+                </div>
+                <div style="text-align: center;">
+                    <img src="{{ url_for('static', filename='images/Main_Iterator_Five_Pebbles.webp') }}" alt="Пять Камней" style="width: 150px; image-rendering: pixelated; border: 3px solid #5a7e5a;">
+                    <p style="color: #b0d0b0; margin-top: 10px;">Пять Камней (Five Pebbles)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="content-card">
+    <h2>⚡ Интерактивный пример</h2>
+    <p>Попробуй изменить текст в поле ввода:</p>
+    
+    <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+        <input type="text" id="liveInput" placeholder="Введи текст" style="background: #1a2a1a; border: 2px solid #5a7e5a; color: #b0d0b0; padding: 10px; flex: 1;">
+        <button onclick="document.getElementById('liveOutput').innerText = document.getElementById('liveInput').value || 'Пусто'" class="btn">Обновить</button>
+    </div>
+    
+    <div id="liveOutput" style="margin-top: 20px; padding: 20px; background: #1a2a1a; border: 2px dashed #5a7e5a; text-align: center; font-size: 18px;">
+        Ты пока ничего не ввел
+    </div>
+    
+    <div class="code-block" style="margin-top: 20px;">
+        <pre>
+&lt;input type="text" id="input"&gt;
+&lt;button onclick="showText()"&gt;Обновить&lt;/button&gt;
+&lt;div id="output"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+function showText() {
+    let text = document.getElementById('input').value;
+    document.getElementById('output').innerText = text;
+}
+&lt;/script&gt;</pre>
+    </div>
+</div>
+{% endblock %}

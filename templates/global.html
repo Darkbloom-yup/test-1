@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Глобальные атрибуты — Rain World{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('attributes') }}" style="display: inline-block; margin-bottom: 20px; color: #8aca8a; text-decoration: none; font-size: 18px;">← Вернуться к атрибутам</a>
+
+<div class="content-card">
+    <h2>Глобальные атрибуты</h2>
+    <p>Атрибуты, которые можно использовать с любыми HTML-тегами.</p>
+    
+    <div class="code-block">
+        <pre>
+<span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"container"</span> <span class="attr">id</span>=<span class="string">"main"</span> <span class="attr">title</span>=<span class="string">"Подсказка"</span><span class="tag">&gt;</span>
+    Контент
+<span class="tag">&lt;/div&gt;</span></pre>
+    </div>
+
+    <table>
+        <tr>
+            <th>Атрибут</th>
+            <th>Описание</th>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td>Один или несколько классов для CSS</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>Уникальный идентификатор элемента</td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>Всплывающая подсказка</td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td>Inline CSS стили</td>
+        </tr>
+        <tr>
+            <td>lang</td>
+            <td>Язык содержимого</td>
+        </tr>
+        <tr>
+            <td>data-*</td>
+            <td>Пользовательские данные</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>Скрывает элемент</td>
+        </tr>
+        <tr>
+            <td>tabindex</td>
+            <td>Порядок при навигации Tab</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}
